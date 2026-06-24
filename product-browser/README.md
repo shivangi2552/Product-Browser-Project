@@ -174,6 +174,11 @@ Default:
 ```
 
 ---
+##  Database Choice
+
+SQLite was chosen for simplicity of setup and to keep the focus on the pagination and query design requirements of the task. The same cursor-based pagination strategy and indexing approach can be applied directly to PostgreSQL or other relational databases in a production environment.
+
+The implementation uses indexes on `(created_at, id)` and `(category, created_at, id)` to support efficient sorting, filtering, and cursor pagination across a dataset of approximately 200,000 products.
 
 ## Database Schema
 
